@@ -8,8 +8,7 @@ from application.forms import AddForm
 @app.route('/')
 @app.route('/home')
 def home():
-    postData=Adding.query.all()
-    return render_template('home.html', title='Home', posts=postData)
+    return render_template('home.html', title='Home')
 
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -35,4 +34,5 @@ def add():
 @app.route('/remove', methods=['GET','POST'])
 def remove():
     postData=Adding.query.all()
+
     return render_template('remove.html', title='Update or Remove', posts=postData)

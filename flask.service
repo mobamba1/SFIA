@@ -3,6 +3,7 @@ Description=Application
 
 [Service]
 User=flask-admin
+EnvironmentFile=/opt/app/export.env
 WorkingDirectory=/opt/app
 ExecStart=/bin/sh -c 'cd /opt/app && \
 	. ./venv/bin/activate && \
