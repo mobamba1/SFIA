@@ -34,5 +34,14 @@ def add():
 @app.route('/remove', methods=['GET','POST'])
 def remove():
     postData=Adding.query.all()
+    
 
     return render_template('remove.html', title='Update or Remove', posts=postData)
+
+@app.route('/remove/delete', methods=['GET', 'POST'])
+def remove_delete():
+    update_this = db.session.query(Adding).delete()
+    db.session.commit()
+    return redirect(url_for('remove'))
+
+

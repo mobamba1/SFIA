@@ -16,3 +16,18 @@ class AddForm(FlaskForm):
         ]
     )
     submit = SubmitField('Post!')
+
+class UpdateAddForm(FlaskForm):
+    burnt = StringField('Update Burnt Calories',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+    intake = StringField('Update Caloric Intake',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=30)
+        ]
+    )
+    submit = SubmitField('Update')

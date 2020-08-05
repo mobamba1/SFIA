@@ -9,11 +9,15 @@
         </div>
         {%for post in posts%}
 	<div>
-		<h3>Calories Burnt</h3>
-		<p>{{post.burnt}}</p>
-		<h3>Caloric Intake</h3>
-		<p>{{post.intake}}</p>
+		<h3>Calories Burnt: {{post.burnt}}</h3>
+		<h3>Caloric Intake: {{post.intake}}</h3>
+		<form action="{{ url_for('remove_delete') }}">
+       		 <button type="submit">Update</button>
+		</form>
 	</div>
 	{%endfor%}
+	<form action="{{ url_for('remove_delete') }}">
+        <button type="submit">Delete All Data</button>
+</form>
 </body>
 </html>
