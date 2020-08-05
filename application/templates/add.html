@@ -1,5 +1,25 @@
-{% extends "layout.html" %}
-{% block body_content %}
-{% endblock %}
-
-<h1>{{"Calorie Count" }}</h1>
+<!DOCTYPE html>
+<html>
+        <head>{{title}} - Page </head>
+<body>
+        <div class=navbar>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('add') }}">Add Calories</a>
+		<a href="{{ url_for('remove') }}">Remove Calories</a>
+        </div>
+	<div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+            {{ form.burnt.label }}
+            {{ form.burnt }}
+            <br>
+            {{ form.intake.label }}
+            {{ form.intake }}
+            <br>
+            {{ form.submit }}
+        </form>
+    </div>
+</body>
+</html>
+~                                                                                                                         
+~                     

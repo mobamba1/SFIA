@@ -5,9 +5,15 @@
         <div class=navbar>
                 <a href="{{ url_for('home') }}">Home</a>
                 <a href="{{ url_for('add') }}">Add Calories</a>
-		<a href="{{ url_for('remove') }}">Remove Calories</a>
+		<a href="{{ url_for('remove') }}">Update Calories</a>
         </div>
+        {%for post in posts%}
+	<div>
+		<h3>Calories Burnt</h3>
+		<p>{{post.burnt}}</p>
+		<h3>Caloric Intake</h3>
+		<p>{{post.intake}}</p>
+	</div>
+	{%endfor%}
 </body>
 </html>
-~                                                                                                                         
-~                     
