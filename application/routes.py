@@ -25,7 +25,7 @@ def add():
         postData = Adding(
             burnt = form.burnt.data,
             intake = form.intake.data,
-            owner_id = form.owner_id.data,            
+            owner_id = 6,            
             
         )
 

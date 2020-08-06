@@ -17,8 +17,7 @@ class AddForm(FlaskForm):
     )
     owner_id = StringField('Owner',
         validators = [
-            DataRequired(),
-            Length(min=1, max=30)
+            Length(min=0,max =30)
         ]
     )
     submit = SubmitField('Post!')
