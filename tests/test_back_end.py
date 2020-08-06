@@ -28,5 +28,40 @@ class TestViews(TestBase):
         response = self.client.get(url_for('remove'))
         self.assertEqual(response.status_code, 200)
 
+class TestAdding(TestBase):
+    def test_add(self):
+        with self.client:
+            response = self.client.post(
+                    '/add',
+                    data=dict(
+                        burnt=100,
+                        intake=100
+                    ),
+                    follow_redirects=True
+                    )
+            self.assertIn(100,response.data)
+
+    def test_add_loads(self):
+        response = self.client.get('/add', content_type='html/text')
+        self.assertTrue(b'Caloric Intake' in response.data)
+
+
+class TestRemove(TestBase):
+    def test_remove_loads(self):
+        response = self.client.get('/remove', content_type='html/text')
+        self.assertTrue(b'Update or Remove' in response.data)
+
+    def test_add(self):
+        with self.client:
+            response = self.client.post(
+                    '/remove',
+                    data=dict(
+                        burnt=100,
+                        intake=100,
+                        calorie_id=10
+                    ),
+                    follow_redirects=True
+                    )
+            self.assertIn(b'Update or Remove',response.data)
  
 
