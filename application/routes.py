@@ -2,12 +2,19 @@ from flask import render_template, redirect, url_for
 # import the app object from the ./application/__init__.py
 from application import app, db
 # define routes for / & /home, this function will be called when these are accessed
-from application.models import Adding 
-from application.forms import AddForm
+from application.models import Adding, User 
+from application.forms import AddForm, UpdateAddForm
 
 @app.route('/')
 @app.route('/home')
 def home():
+    count =0
+    if count !=1:
+        
+        John = User(name='John')
+        db.session.add(John)
+        db.session.commit()
+        count +=1
     return render_template('home.html', title='Home')
 
 
@@ -18,6 +25,7 @@ def add():
         postData = Adding(
             burnt = form.burnt.data,
             intake = form.intake.data,
+            owner = form.owner.data,
         )
 
         db.session.add(postData)
@@ -34,9 +42,14 @@ def add():
 @app.route('/remove', methods=['GET','POST'])
 def remove():
     postData=Adding.query.all()
-    
+    form = UpdateAddForm()
+    if form.validate_on_submit():
+        burnt = form.burnt.data
+        intake = form.intake.data 
+        db.session.commit()
+        return redirect(url_for('remove'))
 
-    return render_template('remove.html', title='Update or Remove', posts=postData)
+    return render_template('remove.html', title='Update or Remove', posts=postData, form=form)
 
 @app.route('/remove/delete', methods=['GET', 'POST'])
 def remove_delete():

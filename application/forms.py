@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, Length
 
 class AddForm(FlaskForm):
@@ -13,6 +13,11 @@ class AddForm(FlaskForm):
         validators = [
             DataRequired(),
             Length(min=2, max=30)
+        ]
+    )
+    owner = IntegerField('Owner',
+        validators = [
+            DataRequired()
         ]
     )
     submit = SubmitField('Post!')

@@ -11,8 +11,18 @@
 	<div>
 		<h3>Calories Burnt: {{post.burnt}}</h3>
 		<h3>Caloric Intake: {{post.intake}}</h3>
-		<form action="{{ url_for('remove_delete') }}">
-       		 <button type="submit">Update</button>
+	</div>
+	<div class=<'form'>
+		<form method='POST' action=''>
+			{{form.hidden_tag()}}
+			{{form.burnt.label}}
+			{{form.burnt}}
+			<br>
+			{{form.intake.label}}
+			{{form.intake}}
+			<br>
+			{{form.submit}}
+
 		</form>
 	</div>
 	{%endfor%}
