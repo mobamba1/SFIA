@@ -15,9 +15,10 @@ class AddForm(FlaskForm):
             Length(min=2, max=30)
         ]
     )
-    owner = IntegerField('Owner',
+    owner_id = StringField('Owner',
         validators = [
-            DataRequired()
+            DataRequired(),
+            Length(min=1, max=30)
         ]
     )
     submit = SubmitField('Post!')
@@ -33,6 +34,12 @@ class UpdateAddForm(FlaskForm):
         validators = [
             DataRequired(),
             Length(min=2, max=30)
+        ]
+    )
+    calorie_id = StringField('Calorie ID',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=30)
         ]
     )
     submit = SubmitField('Update')

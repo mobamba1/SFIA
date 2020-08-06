@@ -9,6 +9,7 @@
         </div>
         {%for post in posts%}
 	<div>
+		<h3>ID number: {{post.id}}</h3>
 		<h3>Calories Burnt: {{post.burnt}}</h3>
 		<h3>Caloric Intake: {{post.intake}}</h3>
 	</div>
@@ -21,6 +22,9 @@
 			{{form.intake.label}}
 			{{form.intake}}
 			<br>
+			{{form.calorie_id.label}}
+                        {{form.calorie_id}}
+                        <br>
 			{{form.submit}}
 
 		</form>
