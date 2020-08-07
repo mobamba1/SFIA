@@ -25,7 +25,7 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
 
     def test_removepage_view(self):
-        response = self.client.get(url_for('remove'))
+        response = self.client.get('/remove', content_type='html/text')
         self.assertEqual(response.status_code, 200)
 
 class TestAdding(TestBase):
