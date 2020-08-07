@@ -8,7 +8,7 @@ from flask_testing import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from application import app, db
-from application.models import Adding
+from application.models import Adding, User
 
 test_burnt = 800
 test_intake = 800
@@ -29,6 +29,9 @@ class TestBase(LiveServerTestCase):
         chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(executable_path="/home/kenneth1521412/SFIA/chromedriver", chrome_options=chrome_options)
         self.driver.get("http://34.72.106.127:5000/")
+        db.session.commit()
+        db.drop_all()
+        db.create_all()
 
     def tearDown(self):
         self.driver.quit()
@@ -53,24 +56,29 @@ class TestView(TestBase):
         self.driver.find_element_by_xpath('//*[@id="submit"]').click()
         time.sleep(1)
 
-        assert url_for('home') in self.driver.current_url
+        assert url_for('add') in self.driver.current_url
 
-    def test_update(self):
+#    def test_update(self):
+ #       John = User(name="John")
+  #      Workout = Adding(burnt=100,intake=100,ownder_id=1)
+#
+ #       db.session.commit(John)
+  #      db.session.commit(Workout)
+   #     self.driver.find_element_by_xpath('/html/body/div/a[3]').click()
+    #    time.sleep(1)
+     #   self.idriver.find_element_by_xpath('//*[@id="burnt"]').send_keys(test_burnt)
+      #  self.driver.find_element_by_xpath('//*[@id="intake"]').send_keys(test_intake)
+        #self.driver.find_element_by_xpath('//*[@id="calorie_id"]').send_keys(test_owner_id)
+       # self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+       # time.sleep(1)
+       # assert url_for('remove') in self.driver.current_url
+
+    def test_delete(self):
         self.driver.find_element_by_xpath('/html/body/div/a[3]').click()
         time.sleep(1)
-        self.driver.find_element_by_xpath('//*[@id="burnt"]').send_keys(test_burnt)
-        self.driver.find_element_by_xpath('//*[@id="intake"]').send_keys(test_intake)
-        self.driver.find_element_by_xpath('//*[@id="calorie_id"]').send_keys(test_owner_id)
-        self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+        self.driver.find_element_by_xpath('/html/body/form/button').click()
         time.sleep(1)
         assert url_for('remove') in self.driver.current_url
-
-#    def test_delete(self):
- #       self.driver.find_element_by_xpath('/html/body/div/a[3]').click()
-  #      time.sleep(1)
-   #     self.driver.find_element_by_xpath('/html/body/form/button').click()
-    #    time.sleep(1)
-     #   assert url_for('remove') in self.driver.current_url
 
 
 if __name__ == '__main__':

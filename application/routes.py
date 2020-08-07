@@ -8,13 +8,11 @@ from application.forms import AddForm, UpdateAddForm
 @app.route('/')
 @app.route('/home')
 def home():
-    count =0
-    if count == 0:
         
-        John = User(name='John')
-        db.session.add(John)
-        db.session.commit()
-        count +=1
+    John = User(name='John')
+    db.session.add(John)
+    db.session.commit()
+        
     return render_template('home.html', title='Home')
 
 
