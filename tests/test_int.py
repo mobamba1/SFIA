@@ -10,13 +10,12 @@ from selenium.webdriver.chrome.options import Options
 from application import app, db
 from application.models import Adding
 
-test_burnt = 300
-test_intake = 300
+test_burnt = 800
+test_intake = 800
 test_ownder_id =10
 
 
 class TestBase(LiveServerTestCase):
-
     def create_app(self):
         app.config['SQLALCHEMY_DATABASE_URI'] = str(getenv('TEST_DATABASE'))
         app.config['SECRET_KEY'] = getenv('SKEY')
@@ -29,23 +28,32 @@ class TestBase(LiveServerTestCase):
         chrome_options.binary_location = "/usr/bin/chromium-browser"
         chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(executable_path="/home/kenneth1521412/SFIA/chromedriver", chrome_options=chrome_options)
-        self.driver.get("http://35.238.140.108:5000")
+        self.driver.get("http://34.72.106.127:5000/")
 
     def tearDown(self):
         self.driver.quit()
         print("--------------------------END-OF-TEST----------------------------------------------\n\n\n-------------------------UNIT-AND-SELENIUM-TESTS----------------------------------------------")
-
+        
     def test_server_is_up_and_running(self):
-        response = urlopen("http://35.238.140.108:5000")
+        response = urlopen("http://34.72.106.127:5000")
         self.assertEqual(response.code, 200)
-
-
+        
 class TestView(TestBase):
     def test_add(self):
-        self.driver.find_element_by_xpath('<a href="/add">Add Calories</a>').click()
+        self.driver.find_element_by_xpath('/html/body/div/a[2]').click()
         time.sleep(1)
         assert url_for('add') in self.driver.current_url
 
+
+    def test_adding(self):
+        self.driver.find_element_by_xpath('/html/body/div[1]/a[2]').click()
+        time.sleep(3)
+        self.driver.find_element_by_xpath('//*[@id="burnt"]').send_keys(test_burnt)
+        self.driver.find_element_by_xpath('//*[@id="intake"]').send_keys(test_inatke)
+        self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+        time.sleep(1)
+
+        assert url_for('home') in self.driver.current_url
 
 if __name__ == '__main__':
     unittest.main(port=5000)
