@@ -15,6 +15,15 @@ class TestBase(TestCase):
                 )
         return app
 
+
+
+
+
+
+
+
+
+
 class TestViews(TestBase):
     def test_homepage_view(self):
         response = self.client.get(url_for('home'))
@@ -51,14 +60,14 @@ class TestRemove(TestBase):
         response = self.client.get('/remove', content_type='html/text')
         self.assertTrue(b'Update or Remove' in response.data)
 
-    def test_add(self):
+    def test_add1(self):
         with self.client:
             response = self.client.post(
                     '/remove',
                     data=dict(
                         burnt=100,
                         intake=100,
-                        calorie_id=102
+                        calorie_id= 13
                     ),
                     follow_redirects=True
                     )

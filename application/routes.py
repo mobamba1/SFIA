@@ -9,7 +9,7 @@ from application.forms import AddForm, UpdateAddForm
 @app.route('/home')
 def home():
     count =0
-    if count < 0:
+    if count == 0:
         
         John = User(name='John')
         db.session.add(John)
@@ -25,7 +25,7 @@ def add():
         postData = Adding(
             burnt = form.burnt.data,
             intake = form.intake.data,
-            owner_id = 6,            
+            owner_id = 1,            
             
         )
 
@@ -45,8 +45,6 @@ def remove():
     postData=Adding.query.all()
     form = UpdateAddForm()
     if form.validate_on_submit():
-        burnt = form.burnt.data
-        intake = form.intake.data
         number = form.calorie_id.data
         update = Adding.query.filter_by(id=number).first()
         update.burnt = form.burnt.data
