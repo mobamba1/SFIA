@@ -58,7 +58,7 @@ class TestRemove(TestBase):
                     data=dict(
                         burnt=100,
                         intake=100,
-                        calorie_id=10
+                        calorie_id=88
                     ),
                     follow_redirects=True
                     )

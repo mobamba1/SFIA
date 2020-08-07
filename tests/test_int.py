@@ -12,7 +12,7 @@ from application.models import Adding
 
 test_burnt = 800
 test_intake = 800
-test_ownder_id =10
+test_owner_id =86
 
 
 class TestBase(LiveServerTestCase):
@@ -47,13 +47,31 @@ class TestView(TestBase):
 
     def test_adding(self):
         self.driver.find_element_by_xpath('/html/body/div[1]/a[2]').click()
-        time.sleep(3)
+        time.sleep(1)
         self.driver.find_element_by_xpath('//*[@id="burnt"]').send_keys(test_burnt)
-        self.driver.find_element_by_xpath('//*[@id="intake"]').send_keys(test_inatke)
+        self.driver.find_element_by_xpath('//*[@id="intake"]').send_keys(test_intake)
         self.driver.find_element_by_xpath('//*[@id="submit"]').click()
         time.sleep(1)
 
         assert url_for('home') in self.driver.current_url
+
+    def test_update(self):
+        self.driver.find_element_by_xpath('/html/body/div/a[3]').click()
+        time.sleep(1)
+        self.driver.find_element_by_xpath('//*[@id="burnt"]').send_keys(test_burnt)
+        self.driver.find_element_by_xpath('//*[@id="intake"]').send_keys(test_intake)
+        self.driver.find_element_by_xpath('//*[@id="calorie_id"]').send_keys(test_owner_id)
+        self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+        time.sleep(1)
+        assert url_for('remove') in self.driver.current_url
+
+#    def test_delete(self):
+ #       self.driver.find_element_by_xpath('/html/body/div/a[3]').click()
+  #      time.sleep(1)
+   #     self.driver.find_element_by_xpath('/html/body/form/button').click()
+    #    time.sleep(1)
+     #   assert url_for('remove') in self.driver.current_url
+
 
 if __name__ == '__main__':
     unittest.main(port=5000)
