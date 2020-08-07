@@ -8,8 +8,8 @@ from os import getenv
 
 class TestBase(TestCase):
     def create_app(self):
-        app.config.update(SQLACHEMY_DATABASE_URI=getenv('TEST_DB_URI'),
-                SECRET_KEY=getenv('TEST_SECRET_KEY'),
+        app.config.update(SQLACHEMY_DATABASE_URI=getenv('TEST_DATABASE'),
+                SECRET_KEY=getenv('SKEY'),
                 WTF_CSRF_ENABLED=False,
                 DEBUG=True
                 )
