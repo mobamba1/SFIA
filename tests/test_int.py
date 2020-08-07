@@ -12,7 +12,7 @@ from application.models import Adding
 
 test_burnt = 800
 test_intake = 800
-test_owner_id =86
+test_owner_id =102
 
 
 class TestBase(LiveServerTestCase):
