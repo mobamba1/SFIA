@@ -7,16 +7,16 @@
                 <a href="{{ url_for('add') }}">Add Calories</a>
 		<a href="{{ url_for('remove') }}">Remove Calories</a>
         </div>
-	<div class='form'>
+	<div class='form'> <!--this shows the forms that we had written in forms.py -->
         <form method='POST' action=''>
             {{ form.hidden_tag() }}
-            {{ form.burnt.label }}
-            {{ form.burnt }}
+            {{ form.burnt.label }}<!--Label -->
+            {{ form.burnt }}<!--this is the input box -->
             <br>
             {{ form.intake.label }}
             {{ form.intake }}
 	    <br>
-            {{ form.submit }}
+            {{ form.submit }}<!--submit button -->
         </form>
     </div>
 </body>
