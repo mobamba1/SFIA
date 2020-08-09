@@ -7,16 +7,30 @@
                 <a href="{{ url_for('add') }}">Add Calories</a>
 		<a href="{{ url_for('remove') }}">Update Calories</a>
         </div>
-        {%for post in posts%}
+        {%for post in posts%}<!--for loop to print every post in posts -->
 	<div>
+		<h3>ID number: {{post.id}}</h3><!--prints out the current stored data -->
 		<h3>Calories Burnt: {{post.burnt}}</h3>
 		<h3>Caloric Intake: {{post.intake}}</h3>
-		<form action="{{ url_for('remove_delete') }}">
-       		 <button type="submit">Update</button>
+	</div>
+	<div class=<'form'><!--takes the input of the user from form -->
+		<form method='POST' action=''>
+			{{form.hidden_tag()}}
+			{{form.burnt.label}}
+			{{form.burnt}}
+			<br>
+			{{form.intake.label}}
+			{{form.intake}}
+			<br>
+			{{form.calorie_id.label}}
+                        {{form.calorie_id}}
+                        <br>
+			{{form.submit}}
+
 		</form>
 	</div>
 	{%endfor%}
-	<form action="{{ url_for('remove_delete') }}">
+	<form action="{{ url_for('remove_delete') }}"><!--if this action is done the the linked function in routes.py will be activated -->
         <button type="submit">Delete All Data</button>
 </form>
 </body>

@@ -1,12 +1,15 @@
-from flask_wtf import FlaskForm #flask forms so that it can be included in the front end
-from wtforms import StringField, SubmitField #this will used to identify the type of data being placed
-from wtforms.validators import DataRequired, Length #ensure that validators are used correctly so that no data is left out 
 
-class AddForm(FlaskForm): # this form is to add new burnt and intake calories by the user
+from flask_wtf import FlaskForm #enable to add forms in the application
+from wtforms import StringField, SubmitField, IntegerField #identifiers of what data is going to be used
+from wtforms.validators import DataRequired, Length # validators to ensure that data is input correctly 
+
+class AddForm(FlaskForm): #used to add a intake and burnt calorie
     burnt = StringField('Burnt Calories',
         validators = [
-            DataRequired(),#data needs to be inputed through the forms
-            Length(min=2, max=30)#data has to be min 2 length and 30 max
+            DataRequired(),#ensure that the form needs to be filledi n
+            Length(min=2, max=30)#makes sure that the data leng is between 2 and 30 
+
+
         ]
     )
     intake = StringField('Caloric Intake',
@@ -15,9 +18,16 @@ class AddForm(FlaskForm): # this form is to add new burnt and intake calories by
             Length(min=2, max=30)
         ]
     )
+    owner_id = StringField('Owner',
+        validators = [
+            Length(min=0,max =30)
+        ]
+    )
     submit = SubmitField('Post!')
 
-class UpdateAddForm(FlaskForm): # this is to update the data in SQL
+
+class UpdateAddForm(FlaskForm): #update the current burnt and intake with new one
+
     burnt = StringField('Update Burnt Calories',
         validators = [
             DataRequired(),
@@ -28,6 +38,12 @@ class UpdateAddForm(FlaskForm): # this is to update the data in SQL
         validators = [
             DataRequired(),
             Length(min=2, max=30)
+        ]
+    )
+    calorie_id = StringField('Calorie ID',#this is the key to identify which data needs to be updated
+        validators = [
+            DataRequired(),
+            Length(min=1, max=30)
         ]
     )
     submit = SubmitField('Update')
