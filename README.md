@@ -20,9 +20,9 @@ export DATABASE_URI="mysql+pymysql://root:(sql_server_password)@(SQL_IP_ADDRESS)
 export MY_SECRET_KEY=dunirufnsk
 (VM_IP_ADDRESSS):5000/home
 
-![Home](images/CIPipeline.PNG)
-![Add Page](images/CIPipeline.PNG)
-![Remove Pgae](images/CIPipeline.PNG)
+![Home](images/Home.PNG)
+![Add Page](images/AddPage.PNG)
+![Remove Pgae](images/RemoveandUpdatePage.PNG)
 ![CI PIPELINE](images/CIPipeline.PNG)
 ![ERD](images/ERD.PNG)
 ![Jira](images/Jira.PNG)
