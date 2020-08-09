@@ -4,7 +4,7 @@ This project purpose is to ensure that we are capable of creating an application
 
 # Traking my Progress:
 We had the option to choose between trello and jira, I had chosen to use jira for it was the more familiar service for me. Here I broke down the core components of the application to ensure that the right epics where written and each task were appropriate. These each task are broken down into user stories to ensure that I had included everything a a user will need to do in the applcation. 
-![Jira](image/Jira.png)
+![Jira](images/Jira.PNG)
 
 # Designs:
 In the link bellow are images to display the design of the application. Before developing the application the Design of the Database was considered greatly to ensure that data application have 1 to many relationship. I had 2 tables; User and Adding. The User table will store the user_ID and name, the application already creates a user when accessing the home page to ensure that we have a foreign key for Adding. The Adding table will hold the calorie_id, burnt calories, caloric intake and owner_id. The owner_id is the foreign key which is establish a relationship with the User table. To get a clearer understanding please check the link bellow.
