@@ -1,12 +1,12 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField
-from wtforms.validators import DataRequired, Length
+from flask_wtf import FlaskForm #enable to add forms in the application
+from wtforms import StringField, SubmitField, IntegerField #identifiers of what data is going to be used
+from wtforms.validators import DataRequired, Length # validators to ensure that data is input correctly 
 
-class AddForm(FlaskForm):
+class AddForm(FlaskForm): #used to add a intake and burnt calorie
     burnt = StringField('Burnt Calories',
         validators = [
-            DataRequired(),
-            Length(min=2, max=30)
+            DataRequired(),#ensure that the form needs to be filledi n
+            Length(min=2, max=30)#makes sure that the data leng is between 2 and 30 
         ]
     )
     intake = StringField('Caloric Intake',
@@ -22,7 +22,7 @@ class AddForm(FlaskForm):
     )
     submit = SubmitField('Post!')
 
-class UpdateAddForm(FlaskForm):
+class UpdateAddForm(FlaskForm): #update the current burnt and intake with new one
     burnt = StringField('Update Burnt Calories',
         validators = [
             DataRequired(),
@@ -35,7 +35,7 @@ class UpdateAddForm(FlaskForm):
             Length(min=2, max=30)
         ]
     )
-    calorie_id = StringField('Calorie ID',
+    calorie_id = StringField('Calorie ID',#this is the key to identify which data needs to be updated
         validators = [
             DataRequired(),
             Length(min=1, max=30)
