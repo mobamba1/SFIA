@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
+	<!--the title is taken from routes.py -->
         <head>{{title}} - Page </head>
 <body>
+	<!--Nav bar to show the pages -->
         <div class=navbar>
-                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('home') }}">Home</a> <!--url for takes the user to the page linked in the brackets -->
                 <a href="{{ url_for('add') }}">Add Calories</a>
 		<a href="{{ url_for('remove') }}">Remove Calories</a>
         </div>
