@@ -3,7 +3,7 @@
 This project purpose is to ensure that we are capable of creating an application which has all the CRUD functionality. The application I have created enables users to take not of their caloric intake and calories burnt for the day. Each data the user inputs will be stored in a SQL server which is hosted in Google Cloud Platform. By doing so we can apply the fundementals of creating, reading, updating and deleting into our SQL database as well. Furthermore I had to build the applicaiton using Jenkins which is my CI Server which handles the automation or testing and deployment.
 
 ## Contents:
-* [Traking my Progress:](Traking my Progress:)
+* [Traking my Progress](#Tracking my Progress:)
 * [Designs:](Designs:)
 * [How to run the application:](How to run the application:)
 * [Home Page](Home Page)
