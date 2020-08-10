@@ -40,6 +40,7 @@ https://docs.google.com/document/d/1Gjxqt4aygS_DBByJajkESILNK2yp-1UGWnnEPR8EmQc/
 # Testing: Coverage and Integration
 This is the test resuts of the results that were run in jenkins and the vm machine to see if the application is full functional. The dynamic test was done using Gunicorn to simulate multiple users. In the screenshot it shows 2 workers using the application simultaneously.
 ![Coverage](images/Coverage.PNG)
+The reason why the application was capable of reaching up to 
 ![Dynamic Test](images/DynamicTest.PNG)
 
 # Known Issues:
