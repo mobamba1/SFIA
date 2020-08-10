@@ -42,6 +42,8 @@ This is the test resuts of the results that were run in jenkins and the vm machi
 The reason why the application was capable of reaching up to 94% coverage on unit testing was because every function in the pages of the application was tested. These included the buttons for the navigation, submit and deletion button. I also tested the input forms by using string varibles to be placed in them to simulate a real person's interaction with the application. Any test that has failed will be noted at the end of the test. As you can see on the screen shot it shows that it has passed all 12 test cases. 
 ![Coverage](images/Coverage.PNG)
 ![Dynamic Test](images/DynamicTest.PNG)
+![IntegrationTest](images/IntegrationTest.PNG)
+The screenshot above shows the Unit Test and Integration testing working fine in jenkins. The purpose of the integration test is to test the applications functionality by simulating a human. Not only is this method quicker it is also repeatable. The integration test tested all buttons of the applicaiton using xpath and click to ensure they were functional and takes users to the right pages. The form input was also tested using send_keys which simulates a user key presses to ensure that correct data was implemneted.
 
 # Known Issues:
 There is no way of adding a user manually, it is all done by the algorithm written.
