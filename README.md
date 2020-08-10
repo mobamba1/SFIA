@@ -3,16 +3,16 @@
 This project purpose is to ensure that we are capable of creating an application which has all the CRUD functionality. The application I have created enables users to take not of their caloric intake and calories burnt for the day. Each data the user inputs will be stored in a SQL server which is hosted in Google Cloud Platform. By doing so we can apply the fundementals of creating, reading, updating and deleting into our SQL database as well. Furthermore I had to build the applicaiton using Jenkins which is my CI Server which handles the automation or testing and deployment.
 
 ## Contents:
-# [Traking my Progress:](Traking my Progress:)
-# [Designs:](Designs:)
-# [How to run the application:](How to run the application:)
-# [Home Page](Home Page)
-# [Add Page](Add Page)
-# [Remove and Update Page](Remove and Update Page)
-# [Risk Assesssment](Risk Assesssment)
-# [Testing: Coverage (Unit Test) and Integration](Testing: Coverage (Unit Test) and Integration)
-# [Known Issues:](Known Issues:)
-# [Future improvements:](Future improvements:)
+* [Traking my Progress:](Traking my Progress:)
+* [Designs:](Designs:)
+* [How to run the application:](How to run the application:)
+* [Home Page](Home Page)
+* [Add Page](Add Page)
+* [Remove and Update Page](Remove and Update Page)
+* [Risk Assesssment](Risk Assesssment)
+* [Testing: Coverage (Unit Test) and Integration](Testing: Coverage (Unit Test) and Integration)
+* [Known Issues:](Known Issues:)
+* [Future improvements:](Future improvements:)
 
 # Traking my Progress:
 We had the option to choose between trello and jira, I had chosen to use jira for it was the more familiar service for me. Here I broke down the core components of the application to ensure that the right epics where written and each task were appropriate. These each task are broken down into user stories to ensure that I had included everything a a user will need to do in the applcation. 
