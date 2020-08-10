@@ -1,5 +1,5 @@
 
-# SFIA PROJECT: Calorie Noter
+# SFIA PROJECT: Calorie Diary
 This project purpose is to ensure that we are capable of creating an application which has all the CRUD functionality. The application I have created enables users to take not of their caloric intake and calories burnt for the day. Each data the user inputs will be stored in a SQL server which is hosted in Google Cloud Platform. By doing so we can apply the fundementals of creating, reading, updating and deleting into our SQL database as well. Furthermore I had to build the applicaiton using Jenkins which is my CI Server which handles the automation or testing and deployment.
 
 # Traking my Progress:
@@ -21,15 +21,15 @@ export MY_SECRET_KEY=dunirufnsk
 (VM_IP_ADDRESSS):5000/home
 
 # Home Page
-This is what the home page shoud look like. The only available buttons are the navigation bar, which directs the user to the add and remove page
+This is what the home page shoud look like. The only available buttons are the navigation bar, which directs the user to the add and remove page. 
 ![Home](images/Home.PNG)
 
 # Add Page
-Here the user can use the input forms to add data into the sql
+Here the user can use the input forms to add data into the sql using the forms provided in the page. The data is then handed to the SQL server using session.add().
 ![Add Page](images/AddPage.PNG)
 
 # Remove and Update Page
-Here the user can update their current data or remove everything entirely. This also displays any data the user might have wanted to include.
+Here the user can update their current data or remove everything entirely. This also displays any data the user might have wanted to include. Once we have type the data we want to change it to, we can then commit this data. If we use add this will only create a new data into the SQL server. Using the owner_id we can identify which data need to be ammended. We can also delete all data in the table by querying the database and use seession.query(table).delete.
 ![Remove Pgae](images/RemoveandUpdatePage.PNG)
 
 # Risk Assesssment
@@ -37,10 +37,10 @@ This is a screenshot of some Risk assessments that were considered. To see the f
 ![Risk Assessment](images/RiskAssessment.PNG)
 https://docs.google.com/document/d/1Gjxqt4aygS_DBByJajkESILNK2yp-1UGWnnEPR8EmQc/edit
 
-# Testing: Coverage and Integration
+# Testing: Coverage (Unit Test) and Integration
 This is the test resuts of the results that were run in jenkins and the vm machine to see if the application is full functional. The dynamic test was done using Gunicorn to simulate multiple users. In the screenshot it shows 2 workers using the application simultaneously.
+The reason why the application was capable of reaching up to 94% coverage on unit testing was because every function in the pages of the application was tested. These included the buttons for the navigation, submit and deletion button. I also tested the input forms by using string varibles to be placed in them to simulate a real person's interaction with the application. Any test that has failed will be noted at the end of the test. As you can see on the screen shot it shows that it has passed all 12 test cases. 
 ![Coverage](images/Coverage.PNG)
-The reason why the application was capable of reaching up to 
 ![Dynamic Test](images/DynamicTest.PNG)
 
 # Known Issues:
